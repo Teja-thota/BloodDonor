@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<BloodDonor.Models.Blood>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to New lifes</h1>
+	<marquee behaviour="scroll" direction="left">💕💕💕BLOOD DONAR PORTAL DATA.</marquee>
+<div>
+	<form class=" form-control-color">
+		<button class="btn btn-primary" asp-action="Create" asp-controller="Home">Create</button>
+	</form>
+</div>
+	<div>
+		<form class=" form-control-color">
+			<input type="text" name="bldg"/>
+			<button style:class="btn btn-primary" asp-action="Search" asp-controller="Home">Search</button>
+		</form>
+	</div>
+<table class="table-bordered">
+	<thead>
+		<tr>
+			<th>Donor ID</th>
+			<th>Donor Name</th>
+			<th>Blood Group</th>
+			<th>Contact Number</th>
+		</tr>
+	</thead>
+
+		@foreach (var donor in Model)
+		{
+			<tr>
+				<td>@donor.Id</td>
+				<td>@donor.Name</td>
+				<td>@donor.BloodType</td>
+				<td>@donor.PhoneNumber</td>
+				<td>
+				<a class="btn btn-warning btn-sm-3" asp-action="Edit" asp-route-id="@donor.Id">Edit</a>
+					<form asp-action="Delete" asp-route-id="@donor.Id" method="get" style="display:inline;">
+						<button type="submit" class="btn btn-danger btn-sm-3">Delete</button>
+					</form>
+			</tr>
+		}
+</table>
+

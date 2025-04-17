@@ -1,0 +1,28 @@
+﻿@model BloodDonor.Models.Blood
+
+@{
+    ViewData["Title"] = "Delete Blood Record";
+}
+
+<h1>Delete Blood Record</h1>
+
+<div>
+    <h4>Are you sure you want to delete this?</h4>
+    <hr />
+    <dl class="row">
+        <dt >Name</dt>
+        <dd >@Model.Name</dd>
+
+        <dt >Blood Type</dt>
+        <dd >@Model.BloodType</dd>
+
+        <dt >Phone Number</dt>
+        <dd >@Model.PhoneNumber</dd>
+    </dl>
+
+    <form asp-action="Deleted" method="post">
+        <input type="number" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

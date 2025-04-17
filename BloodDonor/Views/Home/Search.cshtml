@@ -1,0 +1,31 @@
+﻿@model List<BloodDonor.Models.Blood>
+
+<h2>Search Results</h2>
+
+@if (!Model.Any())
+{
+    <p>No results found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Blood Type</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var donor in Model)
+        {
+            <tr>
+                <td>@donor.Name</td>
+                <td>@donor.BloodType</td>
+                <td>@donor.PhoneNumber</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
