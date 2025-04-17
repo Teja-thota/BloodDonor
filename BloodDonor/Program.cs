@@ -17,7 +17,7 @@ namespace BloodDonor.Models
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<BloodDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("Teja connect")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Teja_connect")));
 
             var app = builder.Build();
 
