@@ -7,6 +7,13 @@ namespace BloodDonor.Models
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+            builder.WebHost.UseUrls($"http://*:{port}");
+
+            // Logging for Render
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<BloodDbContext>(options =>
