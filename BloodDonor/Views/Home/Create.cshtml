@@ -13,7 +13,18 @@
     </div>
     <div class="form-group">
         <label asp-for="BloodType"></label>
-        <input asp-for="BloodType" class="form-control" />
+        <select id="bloodGroup" name="bloodType" required>
+            <option value="">--Choose--</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+        @* <input asp-for="BloodType" class="form-control" /> *@
     </div>
     <div class="form-group">
         <label asp-for="PhoneNumber"></label>
