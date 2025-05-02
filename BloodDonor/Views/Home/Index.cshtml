@@ -15,7 +15,7 @@
 	<div>
 		<form class=" form-control-color">
 			<input type="text" name="bldg"/>
-			<button style:class="btn btn-primary" asp-action="Search" asp-controller="Home">Search</button>
+			<button style:class="btn btn-secondary" asp-action="Search" asp-controller="Home">Search</button>
 		</form>
 	</div>
 <table class="table-bordered">
@@ -38,9 +38,11 @@
 				<td>@donor.PhoneNumber</td>
 				<td>
 				<a class="btn btn-warning btn-sm-3" asp-action="Edit" asp-route-id="@donor.Id">Edit</a>
-					<form asp-action="Delete" asp-route-id="@donor.Id" method="get" style="display:inline;">
-						<button type="submit" class="btn btn-danger btn-sm-3">Delete</button>
-					</form>
+					@* <form asp-action="Delete" asp-route-id="@donor.Id" method="get" style="display:inline;"> *@
+					@* 	<button type="submit" class="btn btn-danger btn-sm-3">Delete</button> *@
+					@* </form> *@
+					<a class="btn btn-danger btn-sm-3" asp-action="Delete" asp-route-id="@donor.Id">Delete</a>
+				</td>
 			</tr>
 		}
 </table>
